@@ -1,0 +1,5 @@
+# /programmers.txt
+kjerndfu.name=Kjern USB DFU (board already in DFU mode)
+kjerndfu.protocol=dfu
+kjerndfu.program.tool=kjerndfu
+kjerndfu.program.tool.default=kjerndfu

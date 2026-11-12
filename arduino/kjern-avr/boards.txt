@@ -1,0 +1,36 @@
+# /boards.txt
+# Kjern-32u4HID-C: Arduino Leonardo core and USB stack, factory Atmel DFU bootloader,
+# upload over USB DFU with dfu-programmer, recovery by tying PB0 to GND at power-up.
+
+
+kjern32u4hidc.name=Kjern-32u4HID-C
+
+kjern32u4hidc.vid.0=0x1209
+kjern32u4hidc.pid.0=0x0001
+kjern32u4hidc.vid.1=0x03EB
+kjern32u4hidc.pid.1=0x2FF4
+
+kjern32u4hidc.upload.tool=kjerndfu
+kjern32u4hidc.upload.tool.default=kjerndfu
+kjern32u4hidc.upload.tool.serial=kjerndfu
+kjern32u4hidc.upload.protocol=dfu
+kjern32u4hidc.upload.maximum_size=28672
+kjern32u4hidc.upload.maximum_data_size=2560
+kjern32u4hidc.upload.use_1200bps_touch=true
+kjern32u4hidc.upload.wait_for_upload_port=false
+kjern32u4hidc.upload.disable_flushing=true
+
+kjern32u4hidc.program.tool=kjerndfu
+kjern32u4hidc.program.tool.default=kjerndfu
+
+kjern32u4hidc.build.mcu=atmega32u4
+kjern32u4hidc.build.f_cpu=16000000L
+kjern32u4hidc.build.vid=0x1209
+kjern32u4hidc.build.pid=0x0001
+kjern32u4hidc.build.usb_product="Kjern-32u4HID-C"
+kjern32u4hidc.build.usb_manufacturer="Kjern"
+kjern32u4hidc.build.board=AVR_KJERN32U4HIDC
+kjern32u4hidc.build.core=arduino:arduino
+kjern32u4hidc.build.variant=kjern32u4hidc
+kjern32u4hidc.build.extra_flags={build.usb_flags} -DMAGIC_KEY_POS=0x0800
+

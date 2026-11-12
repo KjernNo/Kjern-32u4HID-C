@@ -1,0 +1,35 @@
+{
+  "packages": [
+    {
+      "name": "kjern",
+      "maintainer": "Kjern",
+      "websiteURL": "https://www.kjern.no",
+      "email": "kontakt@kjern.no",
+      "help": {
+        "online": "https://github.com/KjernNo/Kjern-32u4HID-C"
+      },
+      "platforms": [
+        {
+          "name": "Kjern AVR Boards",
+          "architecture": "avr",
+          "version": "1.1.0",
+          "category": "Contributed",
+          "url": "https://github.com/KjernNo/Kjern-32u4HID-C/releases/download/v1.1.0/kjern-avr-1.1.0.zip",
+          "archiveFileName": "kjern-avr-1.1.0.zip",
+          "checksum": "SHA-256:ce611f34d74eb3b8adb8a70a90ae4fcbf17ddac207f6ff2760008f976305e7c1",
+          "size": "153971",
+          "help": {
+            "online": "https://github.com/KjernNo/Kjern-32u4HID-C"
+          },
+          "boards": [
+            {
+              "name": "Kjern-32u4HID-C"
+            }
+          ],
+          "toolsDependencies": []
+        }
+      ],
+      "tools": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# /platform.txt
+# Core, compiler recipes and libraries are inherited from arduino:avr (build.core=arduino:arduino).
+# Only the DFU upload tool and one link flag are added here.
+
+name=Kjern AVR Boards
+version=1.1.0
+
+# keep the early boot hook in every sketch, even if the variant object ends up in an archive
+compiler.c.elf.extra_flags=-Wl,-u,kjern_init3
+
+tools.kjerndfu.path={runtime.platform.path}/tools
+tools.kjerndfu.upload.params.verbose=
+tools.kjerndfu.upload.params.quiet=
+tools.kjerndfu.upload.pattern=sh "{path}/kjern-dfu-upload.sh" "{build.path}/{build.project_name}.hex"
+tools.kjerndfu.upload.pattern.windows="{path}/kjern-dfu-upload.bat" "{build.path}/{build.project_name}.hex"
+tools.kjerndfu.program.params.verbose=
+tools.kjerndfu.program.params.quiet=
+tools.kjerndfu.program.pattern=sh "{path}/kjern-dfu-upload.sh" "{build.path}/{build.project_name}.hex"
+tools.kjerndfu.program.pattern.windows="{path}/kjern-dfu-upload.bat" "{build.path}/{build.project_name}.hex"
