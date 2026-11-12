@@ -1,0 +1,28 @@
+# /programmers.txt
+# Programmers for Tools > Burn Bootloader. Only needed once per board.
+
+kjernusbasp.name=USBasp (Kjern)
+kjernusbasp.communication=usb
+kjernusbasp.protocol=usbasp
+kjernusbasp.program.protocol=usbasp
+kjernusbasp.program.tool=avrdude
+kjernusbasp.program.tool.default=avrdude
+kjernusbasp.program.extra_params=-Pusb
+
+kjernusbaspslow.name=USBasp slow clock (Kjern, for factory-fresh chips)
+kjernusbaspslow.communication=usb
+kjernusbaspslow.protocol=usbasp
+kjernusbaspslow.program.protocol=usbasp
+kjernusbaspslow.program.tool=avrdude
+kjernusbaspslow.program.tool.default=avrdude
+kjernusbaspslow.program.extra_params=-Pusb -B32
+
+kjernarduinoisp.name=Arduino as ISP (Kjern)
+kjernarduinoisp.communication=serial
+kjernarduinoisp.protocol=stk500v1
+kjernarduinoisp.speed=19200
+kjernarduinoisp.program.protocol=stk500v1
+kjernarduinoisp.program.speed=19200
+kjernarduinoisp.program.tool=avrdude
+kjernarduinoisp.program.tool.default=avrdude
+kjernarduinoisp.program.extra_params=-P{serial.port} -b{program.speed}

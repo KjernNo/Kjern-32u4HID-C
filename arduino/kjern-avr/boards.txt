@@ -1,0 +1,51 @@
+# /boards.txt
+# Kjern-32u4HID-C: ATmega32U4 at 16 MHz with the Kjern bootloader (Arduino Caterina, AVR109 over
+# a USB serial port). Uploads work exactly like an Arduino Leonardo: the IDE opens the board's
+# COM port at 1200 baud, the board restarts into the bootloader, avrdude writes the sketch.
+# Core and USB stack come unchanged from the "Arduino AVR Boards" package.
+
+kjern32u4hidc.name=Kjern-32u4HID-C
+
+# USB IDs used to recognise the board: .0 is a running sketch, .1 is the bootloader
+kjern32u4hidc.vid.0=0x1209
+kjern32u4hidc.pid.0=0x0001
+kjern32u4hidc.vid.1=0x1209
+kjern32u4hidc.pid.1=0x0002
+kjern32u4hidc.upload_port.0.vid=0x1209
+kjern32u4hidc.upload_port.0.pid=0x0001
+kjern32u4hidc.upload_port.1.vid=0x1209
+kjern32u4hidc.upload_port.1.pid=0x0002
+kjern32u4hidc.upload_port.2.board=kjern32u4hidc
+
+kjern32u4hidc.upload.tool=avrdude
+kjern32u4hidc.upload.tool.default=avrdude
+kjern32u4hidc.upload.protocol=avr109
+kjern32u4hidc.upload.maximum_size=28672
+kjern32u4hidc.upload.maximum_data_size=2560
+kjern32u4hidc.upload.speed=57600
+kjern32u4hidc.upload.disable_flushing=true
+kjern32u4hidc.upload.use_1200bps_touch=true
+kjern32u4hidc.upload.wait_for_upload_port=true
+
+# Tools > Burn Bootloader (needs an ISP programmer, for example a USBasp)
+# Fuses are the Arduino Leonardo values: 16 MHz crystal, no clock divider, JTAG off,
+# 4 KB boot section, reset starts the bootloader, brown-out at 2.6 V
+kjern32u4hidc.bootloader.tool=avrdude
+kjern32u4hidc.bootloader.tool.default=avrdude
+kjern32u4hidc.bootloader.low_fuses=0xff
+kjern32u4hidc.bootloader.high_fuses=0xd8
+kjern32u4hidc.bootloader.extended_fuses=0xcb
+kjern32u4hidc.bootloader.file=kjern/Kjern-32u4HID-C_bootloader.hex
+kjern32u4hidc.bootloader.unlock_bits=0x3F
+kjern32u4hidc.bootloader.lock_bits=0x2F
+
+kjern32u4hidc.build.mcu=atmega32u4
+kjern32u4hidc.build.f_cpu=16000000L
+kjern32u4hidc.build.vid=0x1209
+kjern32u4hidc.build.pid=0x0001
+kjern32u4hidc.build.usb_product="Kjern-32u4HID-C"
+kjern32u4hidc.build.usb_manufacturer="Kjern"
+kjern32u4hidc.build.board=AVR_KJERN32U4HIDC
+kjern32u4hidc.build.core=arduino:arduino
+kjern32u4hidc.build.variant=kjern32u4hidc
+kjern32u4hidc.build.extra_flags={build.usb_flags}

@@ -1,0 +1,46 @@
+Kjern-32u4HID-C bootloader
+
+Kjern-32u4HID-C_bootloader.hex is the Arduino Leonardo bootloader "Caterina", taken from
+upstream/Caterina-Leonardo.hex (Arduino AVR Boards, bootloaders/caterina) and changed by
+tools/build_bootloader.py:
+  - USB vendor/product ID 1209:0002, product "Kjern Bootloader", manufacturer "Kjern"
+  - the instructions that drive the Leonardo RX/TX LED pins (PB0, PD5) are replaced by NOPs
+  - the factory sketch Arduino bundles in the same file is left out
+The program code is otherwise byte for byte the Arduino build.
+
+upstream/ holds the unmodified hex and, for reference, the Caterina sources it was built from.
+
+Behaviour
+  power-on with a sketch present      -> the sketch starts immediately
+  no sketch in flash                  -> stays in the bootloader
+  RESET button                        -> bootloader for 8 seconds, then the sketch
+  serial port opened at 1200 baud and closed (what the Arduino IDE does before an upload)
+                                      -> bootloader for 8 seconds, then the sketch
+  The LED on PC7 fades in and out while the bootloader is active.
+  The bootloader is a USB serial port speaking the AVR109 protocol (avrdude -c avr109).
+
+Fuses: low FF, high D8, extended CB, lock 2F. Boot section 4 KB at 0x7000.
+
+Licence
+Caterina is built on the LUFA library and carries the LUFA licence:
+
+  Copyright 2011  Dean Camera (dean [at] fourwalledcubicle [dot] com)
+  Copyright (c) 2010-2012, Arduino LLC
+
+  Permission to use, copy, modify, distribute, and sell this
+  software and its documentation for any purpose is hereby granted
+  without fee, provided that the above copyright notice appear in
+  all copies and that both that the copyright notice and this
+  permission notice and warranty disclaimer appear in supporting
+  documentation, and that the name of the author not be used in
+  advertising or publicity pertaining to distribution of the
+  software without specific, written prior permission.
+
+  The author disclaim all warranties with regard to this
+  software, including all implied warranties of merchantability
+  and fitness.  In no event shall the author be liable for any
+  special, indirect or consequential damages or any damages
+  whatsoever resulting from loss of use, data or profits, whether
+  in an action of contract, negligence or other tortious action,
+  arising out of or in connection with the use or performance of
+  this software.

@@ -1,0 +1,6 @@
+# /tools/linux/99-kjern.rules
+# Linux: lets normal users open the Kjern-32u4HID-C serial port and keeps ModemManager from
+# probing it (that probing breaks uploads on boards with a USB serial bootloader).
+# Install: sudo cp 99-kjern.rules /etc/udev/rules.d/ && sudo udevadm control --reload-rules
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="0001", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="0002", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
