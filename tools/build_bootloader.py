@@ -5,7 +5,7 @@
 #
 # The machine code is the stock, field-proven Caterina build that ships with the Arduino IDE.
 # Only data and ten single-word LED instructions are changed:
-#   1. USB vendor/product ID and the two USB strings (they live in the .data image), plus the
+#   1. USB vendor/product ID (from tools/usb_ids.py) and the two USB strings (they live in the .data image), plus the
 #      two "ldi r18, <descriptor size>" immediates that tell the USB stack how long they are
 #   2. every write to PB0 and PD5 (Leonardo RX/TX LEDs) becomes a NOP, so the bootloader never
 #      drives those pins. PB0 is a user pin on the castellated edge, PD5 is not connected.
@@ -20,9 +20,11 @@ import os
 import shutil
 import sys
 
-# ---- identity, change these when Kjern gets its own USB product IDs -------------------------
-USB_VID = 0x1209                      # pid.codes
-USB_PID_BOOTLOADER = 0x0002           # must differ from the sketch PID (0x0001 in boards.txt)
+# ---- identity --------------------------------------------------------------------------------
+# The USB IDs live in tools/usb_ids.py so the bootloader, boards.txt and the udev rules can't drift.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from usb_ids import VID as USB_VID, PID_BOOTLOADER as USB_PID_BOOTLOADER  # noqa: E402
+
 PRODUCT_STRING = 'Kjern Bootloader'   # max 16 characters
 MANUFACTURER_STRING = 'Kjern'         # max 11 characters
 # ---------------------------------------------------------------------------------------------
