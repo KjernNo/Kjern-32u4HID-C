@@ -6,16 +6,26 @@
 
 kjern32u4hidc.name=Kjern-32u4HID-C
 
-# USB IDs used to recognise the board: .0 is a running sketch, .1 is the bootloader
+# USB IDs used to recognise the board. 1209:4B4A is a running sketch, 1209:4B4C the bootloader
+# (pid.codes, see tools/usb_ids.py). 1209:0001 and 1209:0002 are the test IDs the first boards
+# shipped with. They stay listed so those boards keep working, nothing new uses them.
 kjern32u4hidc.vid.0=0x1209
-kjern32u4hidc.pid.0=0x0001
+kjern32u4hidc.pid.0=0x4B4A
 kjern32u4hidc.vid.1=0x1209
-kjern32u4hidc.pid.1=0x0002
+kjern32u4hidc.pid.1=0x4B4C
+kjern32u4hidc.vid.2=0x1209
+kjern32u4hidc.pid.2=0x0001
+kjern32u4hidc.vid.3=0x1209
+kjern32u4hidc.pid.3=0x0002
 kjern32u4hidc.upload_port.0.vid=0x1209
-kjern32u4hidc.upload_port.0.pid=0x0001
+kjern32u4hidc.upload_port.0.pid=0x4B4A
 kjern32u4hidc.upload_port.1.vid=0x1209
-kjern32u4hidc.upload_port.1.pid=0x0002
-kjern32u4hidc.upload_port.2.board=kjern32u4hidc
+kjern32u4hidc.upload_port.1.pid=0x4B4C
+kjern32u4hidc.upload_port.2.vid=0x1209
+kjern32u4hidc.upload_port.2.pid=0x0001
+kjern32u4hidc.upload_port.3.vid=0x1209
+kjern32u4hidc.upload_port.3.pid=0x0002
+kjern32u4hidc.upload_port.4.board=kjern32u4hidc
 
 kjern32u4hidc.upload.tool=avrdude
 kjern32u4hidc.upload.tool.default=avrdude
@@ -42,7 +52,7 @@ kjern32u4hidc.bootloader.lock_bits=0x2F
 kjern32u4hidc.build.mcu=atmega32u4
 kjern32u4hidc.build.f_cpu=16000000L
 kjern32u4hidc.build.vid=0x1209
-kjern32u4hidc.build.pid=0x0001
+kjern32u4hidc.build.pid=0x4B4A
 kjern32u4hidc.build.usb_product="Kjern-32u4HID-C"
 kjern32u4hidc.build.usb_manufacturer="Kjern"
 kjern32u4hidc.build.board=AVR_KJERN32U4HIDC

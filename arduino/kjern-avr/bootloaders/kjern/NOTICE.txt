@@ -3,7 +3,9 @@ Kjern-32u4HID-C bootloader
 Kjern-32u4HID-C_bootloader.hex is the Arduino Leonardo bootloader "Caterina", taken from
 upstream/Caterina-Leonardo.hex (Arduino AVR Boards, bootloaders/caterina) and changed by
 tools/build_bootloader.py:
-  - USB vendor/product ID 1209:0002, product "Kjern Bootloader", manufacturer "Kjern"
+  - USB vendor/product ID 1209:4B4C (pid.codes), product "Kjern Bootloader", manufacturer "Kjern".
+    Boards from the first Rev C batch have an earlier build of this file that used the
+    pid.codes test ID 1209:0002. Everything else about it is the same.
   - the instructions that drive the Leonardo RX/TX LED pins (PB0, PD5) are replaced by NOPs
   - the factory sketch Arduino bundles in the same file is left out
 The program code is otherwise byte for byte the Arduino build.

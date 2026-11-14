@@ -4,7 +4,7 @@
 # the avrdude recipes, so uploads and Burn Bootloader resolve the bootloader file in this package.
 
 name=Kjern AVR Boards
-version=2.0.0
+version=2.1.0
 
 tools.avrdude.path={runtime.tools.avrdude.path}
 tools.avrdude.cmd.path={path}/bin/avrdude
