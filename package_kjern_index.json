@@ -12,12 +12,12 @@
         {
           "name": "Kjern AVR Boards",
           "architecture": "avr",
-          "version": "2.0.0",
+          "version": "2.1.0",
           "category": "Contributed",
-          "url": "https://github.com/KjernNo/Kjern-32u4HID-C/releases/download/v2.0.0/kjern-avr-2.0.0.zip",
-          "archiveFileName": "kjern-avr-2.0.0.zip",
-          "checksum": "SHA-256:c2d1819767df3431e89101c3e77914c34652e480df91ddc61cf24b48e6c7c09f",
-          "size": "17300",
+          "url": "https://github.com/KjernNo/Kjern-32u4HID-C/releases/download/v2.1.0/kjern-avr-2.1.0.zip",
+          "archiveFileName": "kjern-avr-2.1.0.zip",
+          "checksum": "SHA-256:63ecdd1aa9d52aba3bda9fcb7fb2fe0b149ad20408ede37e171b790f2fd9f31f",
+          "size": "17527",
           "help": {
             "online": "https://github.com/KjernNo/Kjern-32u4HID-C"
           },
